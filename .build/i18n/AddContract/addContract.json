@@ -1,0 +1,58 @@
+[
+  {
+    "id": "addContract.title.type",
+    "defaultMessage": "choose a contract type"
+  },
+  {
+    "id": "addContract.title.details",
+    "defaultMessage": "enter contract details"
+  },
+  {
+    "id": "addContract.button.cancel",
+    "defaultMessage": "Cancel"
+  },
+  {
+    "id": "addContract.button.next",
+    "defaultMessage": "Next"
+  },
+  {
+    "id": "addContract.button.prev",
+    "defaultMessage": "Back"
+  },
+  {
+    "id": "addContract.button.add",
+    "defaultMessage": "Add Contract"
+  },
+  {
+    "id": "addContract.address.hint",
+    "defaultMessage": "the network address for the contract"
+  },
+  {
+    "id": "addContract.address.label",
+    "defaultMessage": "network address"
+  },
+  {
+    "id": "addContract.name.hint",
+    "defaultMessage": "a descriptive name for the contract"
+  },
+  {
+    "id": "addContract.name.label",
+    "defaultMessage": "contract name"
+  },
+  {
+    "id": "addContract.description.hint",
+    "defaultMessage": "an expanded description for the entry"
+  },
+  {
+    "id": "addContract.description.label",
+    "defaultMessage": "(optional) contract description"
+  },
+  {
+    "id": "addContract.abi.hint",
+    "defaultMessage": "the abi for the contract"
+  },
+  {
+    "id": "addContract.abi.label",
+    "defaultMessage": "contract abi"
+  }
+]

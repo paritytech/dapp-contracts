@@ -1,0 +1,22 @@
+[
+  {
+    "id": "contracts.sortOrder.date",
+    "defaultMessage": "date"
+  },
+  {
+    "id": "contracts.sortOrder.minedBlock",
+    "defaultMessage": "mined block"
+  },
+  {
+    "id": "contracts.buttons.watch",
+    "defaultMessage": "watch"
+  },
+  {
+    "id": "contracts.buttons.deploy",
+    "defaultMessage": "deploy"
+  },
+  {
+    "id": "contracts.title",
+    "defaultMessage": "Contracts"
+  }
+]

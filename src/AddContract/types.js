@@ -17,7 +17,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { eip20, wallet } from '@parity/shared/contracts/abi';
+import { eip20, foundationWallet } from '~/contracts/abi';
 
 const ABI_TYPES = [
   {
@@ -44,7 +44,6 @@ const ABI_TYPES = [
       />
     ),
     readOnly: true,
-    key: 'token',
     type: 'token',
     value: JSON.stringify(eip20)
   },
@@ -72,9 +71,8 @@ const ABI_TYPES = [
       />
     ),
     readOnly: true,
-    key: 'multisig',
     type: 'multisig',
-    value: JSON.stringify(wallet)
+    value: JSON.stringify(foundationWallet)
   },
   {
     description: (
@@ -89,7 +87,6 @@ const ABI_TYPES = [
         defaultMessage='Custom Contract'
       />
     ),
-    key: 'custom',
     type: 'custom',
     value: ''
   }

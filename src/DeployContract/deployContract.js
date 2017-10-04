@@ -67,6 +67,7 @@ class DeployContract extends Component {
   };
 
   static propTypes = {
+    availability: PropTypes.string.isRequired,
     accounts: PropTypes.object.isRequired,
     abi: PropTypes.string,
     code: PropTypes.string,
@@ -95,7 +96,7 @@ class DeployContract extends Component {
     description: '',
     descriptionError: null,
     extras: false,
-    fromAddress: Object.keys(this.props.accounts)[0],
+    fromAddress: getSender() || Object.keys(this.props.accounts)[0],
     fromAddressError: null,
     name: '',
     nameError: ERRORS.invalidName,
@@ -111,6 +112,13 @@ class DeployContract extends Component {
     if (abi && code) {
       this.setState({ abi, code });
     }
+
+    loadSender(this.context.api)
+      .then((defaultAccount) => {
+        if (defaultAccount !== this.state.fromAddress) {
+          this.setState({ fromAddress: defaultAccount });
+        }
+      });
   }
 
   componentWillReceiveProps (nextProps) {
@@ -325,6 +333,7 @@ class DeployContract extends Component {
 
     return (
       <Extras
+        availability={ this.props.availability }
         gasStore={ this.gasStore }
         hideData
         isEth
@@ -468,6 +477,7 @@ class DeployContract extends Component {
 
     const contract = api.newContract(abiParsed);
 
+    setSender(fromAddress);
     this.onClose();
     deploy(contract, options, params, true)
       .then((requestId) => {
@@ -483,9 +493,11 @@ class DeployContract extends Component {
 }
 
 function mapStateToProps (state) {
-  const { gasLimit } = state.nodeStatus;
+  const { gasLimit, nodeKind = {} } = state.nodeStatus;
+  const { availability = 'unknown' } = nodeKind;
 
   return {
+    availability,
     gasLimit
   };
 }

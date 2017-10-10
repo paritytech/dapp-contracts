@@ -25,6 +25,7 @@ import { bindActionCreators } from 'redux';
 import { setRequest } from '@parity/shared/redux/providers/requestsActions';
 import { ERRORS, validateAbi, validateCode, validateName, validatePositiveNumber } from '@parity/shared/util/validation';
 import { deploy, deployEstimateGas } from '@parity/shared/util/tx';
+import { deploy, deployEstimateGas, getSender, loadSender, setSender } from '@parity/shared/util/tx';
 import { Button, GasPriceEditor, IdentityIcon, Portal, Warning } from '@parity/ui';
 import { CancelIcon } from '@parity/ui/Icons';
 
@@ -315,7 +316,6 @@ class DeployContract extends Component {
         return (
           <ParametersStep
             { ...this.state }
-            accounts={ accounts }
             onParamsChange={ this.onParamsChange }
             readOnly={ readOnly }
           />

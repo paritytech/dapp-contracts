@@ -24,7 +24,6 @@ import { bindActionCreators } from 'redux';
 
 import { setRequest } from '@parity/shared/redux/providers/requestsActions';
 import { ERRORS, validateAbi, validateCode, validateName, validatePositiveNumber } from '@parity/shared/util/validation';
-import { deploy, deployEstimateGas } from '@parity/shared/util/tx';
 import { deploy, deployEstimateGas, getSender, loadSender, setSender } from '@parity/shared/util/tx';
 import { Button, GasPriceEditor, IdentityIcon, Portal, Warning } from '@parity/ui';
 import { CancelIcon } from '@parity/ui/Icons';
@@ -142,18 +141,19 @@ class DeployContract extends Component {
   render () {
     const { step, inputs } = this.state;
 
-    const realStepKeys = Object.keys(STEPS)
-        .filter((k) => {
-          if (k === 'CONTRACT_PARAMETERS') {
-            return inputs.length > 0;
-          }
+    const realStepKeys = Object
+      .keys(STEPS)
+      .filter((k) => {
+        if (k === 'CONTRACT_PARAMETERS') {
+          return inputs.length > 0;
+        }
 
-          if (k === 'EXTRAS') {
-            return this.state.extras;
-          }
+        if (k === 'EXTRAS') {
+          return this.state.extras;
+        }
 
-          return true;
-        });
+        return true;
+      });
 
     const realStep = realStepKeys.findIndex((k) => k === step);
     const realSteps = realStepKeys.map((k) => STEPS[k]);

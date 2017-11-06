@@ -22,11 +22,11 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { setRequest } from '@parity/shared/redux/providers/requestsActions';
-import { ERRORS, validateAbi, validateCode, validateName, validatePositiveNumber } from '@parity/shared/util/validation';
-import { deploy, deployEstimateGas, getSender, loadSender, setSender } from '@parity/shared/util/tx';
+import { setRequest } from '@parity/shared/lib/redux/providers/requestsActions';
+import { ERRORS, validateAbi, validateCode, validateName, validatePositiveNumber } from '@parity/shared/lib/util/validation';
+import { deploy, deployEstimateGas, getSender, loadSender, setSender } from '@parity/shared/lib/util/tx';
 import { Button, GasPriceEditor, IdentityIcon, Portal, Warning } from '@parity/ui';
-import { CancelIcon } from '@parity/ui/Icons';
+import { CancelIcon } from '@parity/ui/lib/Icons';
 
 import DetailsStep from './DetailsStep';
 import ParametersStep from './ParametersStep';

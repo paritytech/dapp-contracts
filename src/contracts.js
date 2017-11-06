@@ -21,9 +21,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { uniq, isEqual } from 'lodash';
 
-import { setVisibleAccounts } from '@parity/shared/redux/providers/personalActions';
+import { setVisibleAccounts } from '@parity/shared/lib/redux/providers/personalActions';
 import { Actionbar, ActionbarSearch, ActionbarSort, Button, Page } from '@parity/ui';
-import { AddIcon } from '@parity/ui/Icons';
+import { AddIcon } from '@parity/ui/lib/Icons';
 
 import List from '@parity/dapp-accounts/src/List';
 

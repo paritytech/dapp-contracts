@@ -16,7 +16,7 @@
 
 import { action, computed, observable, transaction } from 'mobx';
 
-import { ERRORS, validateAbi, validateAddress, validateName } from '@parity/shared/util/validation';
+import { ERRORS, validateAbi, validateAddress, validateName } from '@parity/shared/lib/util/validation';
 
 import { ABI_TYPES } from './types';
 

@@ -21,9 +21,9 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { newError } from '@parity/shared/redux/actions';
+import { newError } from '@parity/shared/lib/redux/actions';
 import { Button, Form, Input, InputAddress, Portal, RadioButtons } from '@parity/ui';
-import { AddIcon, CancelIcon, NextIcon, PrevIcon } from '@parity/ui/Icons';
+import { AddIcon, CancelIcon, NextIcon, PrevIcon } from '@parity/ui/lib/Icons';
 
 import Store from './store';
 

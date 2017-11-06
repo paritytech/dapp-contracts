@@ -18,8 +18,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
-import { parseAbiType } from '@parity/shared/util/abi';
-import { validateAbi } from '@parity/shared/util/validation';
+import { parseAbiType } from '@parity/shared/lib/util/abi';
+import { validateAbi } from '@parity/shared/lib/util/validation';
 import { AddressSelect, Checkbox, Dropdown, Form, Input } from '@parity/ui';
 
 const CHECK_STYLE = {
